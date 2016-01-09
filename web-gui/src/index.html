@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Angular 2 boilerplate</title>
+
+  <link href="lib/bootstrap/css/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
+
+  <script src="lib/angular2-polyfills.js"></script>
+  <script src="lib/system.src.js"></script>
+  <script src="lib/Rx.js"></script>
+  <script src="lib/angular2.dev.js"></script>
+  <script src="lib/http.dev.js"></script>
+
+  <script>
+    System.config({
+      packages: {
+        'app': {
+          defaultExtension: 'js'
+        }
+      }
+    });
+    System.import('app/boot')
+      .then(null, console.error.bind(console));
+  </script>
+
+  <style type="text/css">
+    .app {
+      max-width: 330px;
+      padding: 15px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">GUI stuff</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container app">
+    <app>Loading...</app>
+  </div>
+</body>
+
+</html>
