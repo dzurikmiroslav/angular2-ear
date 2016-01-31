@@ -43,7 +43,8 @@ gulp.task('libs-js', function() {
       nodeModulesDir + '/systemjs/dist/system.src.js',
       nodeModulesDir + '/rxjs/bundles/Rx.js',
       nodeModulesDir + '/angular2/bundles/angular2.dev.js',
-      nodeModulesDir + '/angular2/bundles/http.dev.js'
+      nodeModulesDir + '/angular2/bundles/http.dev.js',
+      nodeModulesDir + '/angular2/bundles/router.dev.js'
     ])
     .pipe(gulp.dest(buildDir + '/lib'));
 });
