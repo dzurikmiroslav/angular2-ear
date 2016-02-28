@@ -4,11 +4,15 @@
     "module": "system",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true 
+    "experimentalDecorators": true
   },
   "exclude": [
     "node_modules",
-    "build"
+    "build",
+    "typings"
+  ],
+  "files": [
+    "typings/browser.d.ts"
   ],
   "compileOnSave": false
 }

@@ -4,7 +4,7 @@ import { Component } from 'angular2/core';
   selector: 'about',
   template: `
     <div>
-      about
+      The about stuff...
     </div>
   `
 })

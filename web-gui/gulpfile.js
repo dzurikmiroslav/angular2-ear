@@ -14,7 +14,7 @@ var serverDir = 'server';
 
 gulp.task('js', function() {
   var tsProject = typescript.createProject('tsconfig.json');
-  return gulp.src(srcDir + '/**/*.ts')
+  return gulp.src([srcDir + '/**/*.ts', 'typings/browser.d.ts'])
     .pipe(sourcemaps.init())
     .pipe(typescript(tsProject))
     .pipe(uglify())
@@ -39,6 +39,8 @@ gulp.task('clean', function() {
 
 gulp.task('libs-js', function() {
   return gulp.src([
+      nodeModulesDir + '/es6-shim/es6-shim.min.js',
+      nodeModulesDir + '/systemjs/dist/system-polyfills.js',
       nodeModulesDir + '/angular2/bundles/angular2-polyfills.js',
       nodeModulesDir + '/systemjs/dist/system.src.js',
       nodeModulesDir + '/rxjs/bundles/Rx.js',
