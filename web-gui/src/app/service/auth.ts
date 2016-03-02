@@ -42,15 +42,19 @@ export class AuthService {
     });
   }
 
-  public login(username: string, password: string): Promise<void> {
+  public login(username: string, password: string): Promise<boolean> {
     let body = JSON.stringify({ username, password });
-    return new Promise<void>((resolve, reject) => {
+    return new Promise<boolean>((resolve, reject) => {
       this.http.post('/web-service/rest/auth/login', body, this.options).subscribe(res => {
         if (res.text()) {
-          this.user = res.json();
-          this.loggedIn.next(this.user);
+          var status = res.json();
+          if (status.success) {
+            this.getUser().then((user) => {
+              this.loggedIn.next(user);
+            });
+          }
+          resolve(status.success);
         }
-        resolve();
       }, err => {
           reject();
         });

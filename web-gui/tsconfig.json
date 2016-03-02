@@ -11,8 +11,5 @@
     "build",
     "typings"
   ],
-  "files": [
-    "typings/browser.d.ts"
-  ],
   "compileOnSave": false
 }

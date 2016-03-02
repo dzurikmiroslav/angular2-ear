@@ -8,15 +8,19 @@ exports.user = function(req, res) {
 };
 
 exports.login = function(req, res, next) {
-  if (req.body.username && req.body.password) {
+  if (req.body.username === 'test' && req.body.password === 'test') {
     req.session.user = {
       username: req.body.username,
-      roles: ['USER', 'ADMIN']
+      roles: ['BASIC', 'ADMIN']
     }
 
-    res.end(JSON.stringify(req.session.user));
+    res.end(JSON.stringify({
+      success: true
+    }));
   } else {
-    next('INVALID_LOGIN');
+    res.end(JSON.stringify({
+      success: false
+    }));
   }
 }
 

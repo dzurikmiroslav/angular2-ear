@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {FormBuilder, Form, Validators, ControlGroup, FORM_DIRECTIVES} from 'angular2/common'
+import {FormBuilder, Form, Validators, ControlGroup, NgIf, FORM_DIRECTIVES} from 'angular2/common'
 import {User, AuthService} from '../service/auth';
 
 @Component({
@@ -8,6 +8,10 @@ import {User, AuthService} from '../service/auth';
     <div>
       <div class="jumbotron">
         <h2>Please sign in</h2>
+        <div class="alert alert-danger" role="alert" *ngIf="badLogin">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <strong>Bad login!</strong> That's mean you used wrong login credentials (try use: test/test)
+        </div>
         <form [ngFormModel]="loginForm" (submit)="doLogin()" class="form-horizontal">
           <div class="form-group">
             <label for="username" class="col-sm-2 control-label">Login</label>
@@ -26,25 +30,24 @@ import {User, AuthService} from '../service/auth';
       </div>
     </div>
   `,
-  directives: [FORM_DIRECTIVES]
+  directives: [FORM_DIRECTIVES, NgIf]
 })
 export class LoginComponent {
-  public stuff: string;
 
   private loginForm: ControlGroup;
+  
+  private badLogin: boolean;
 
   constructor(private authService: AuthService, fb: FormBuilder) {
     this.loginForm = fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
-
-    authService.getUser().then(user => {
-      this.stuff = JSON.stringify(user);
-    });
   }
 
   doLogin() {
-    this.authService.login(this.loginForm.value.username, this.loginForm.value.password);
+    this.authService.login(this.loginForm.value.username, this.loginForm.value.password).then((success) => {
+      this.badLogin = !success;
+    });
   }
 }
