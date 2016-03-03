@@ -32,7 +32,7 @@ export class AuthService {
       if (this.user) {
         resolve(this.user);
       } else {
-        this.http.get('/web-service/rest/auth/user').subscribe(res => {
+        this.http.post('/web-service/rest/auth/user').subscribe(res => {
           this.user = res.text() ? res.json() : null;
           resolve(this.user);
         }, err => {

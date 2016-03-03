@@ -12,7 +12,7 @@ exports.login = function(req, res, next) {
     req.session.user = {
       username: req.body.username,
       roles: ['BASIC', 'ADMIN']
-    }
+    };
 
     res.end(JSON.stringify({
       success: true

@@ -7,7 +7,7 @@ module.exports = connectRoute(function(router) {
     res.end('The some mock stuff is here...');
   });
 
-  router.get('/auth/user', auth.user);
+  router.post('/auth/user', auth.user);
   router.post('/auth/login', auth.login);
   router.post('/auth/logout', auth.logout);
 });
