@@ -3,5 +3,6 @@ node_modules
 nb-configuration.xml
 nbproject
 .nb-gradle
+.nb-gradle-properties
 .gradle
 web-gui/dist
