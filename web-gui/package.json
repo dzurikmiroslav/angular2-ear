@@ -1,34 +1,46 @@
 {
-  "name": "web-gui",
-  "version": "1.0.0",
-  "private": true,
-  "dependencies": {
-    "angular2": "2.0.0-beta.7",
-    "bootstrap": "3.3.6",
-    "es6-promise": "^3.0.2",
-    "es6-shim": "^0.33.3",
-    "gulp": "^3.9.1",
-    "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.2",
-    "systemjs": "0.19.22",
-    "zone.js": "0.5.15"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-clean": "^0.3.1",
-    "gulp-live-server": "0.0.29",
-    "gulp-rename": "^1.2.2",
-    "gulp-sequence": "^0.4.4",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-typescript": "^2.10.0",
-    "gulp-uglify": "^1.5.1",
-    "typescript": "^1.7.5",
-    "typings": "^0.6.8",
-    "body-parser": "^1.14.2",
-    "connect-route": "^0.1.5",
-    "cookie-session": "^1.2.0"
-  },
-  "scripts": {
-    "postinstall": "typings install"
-  }
+    "name": "web-gui",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "@angular/common": "~2.2.4",
+        "@angular/compiler": "~2.2.4",
+        "@angular/core": "~2.2.4",
+        "@angular/forms": "~2.2.4",
+        "@angular/http": "~2.2.4",
+        "@angular/platform-browser": "~2.2.4",
+        "@angular/platform-browser-dynamic": "~2.2.4",
+        "@angular/router": "~3.2.4",
+        "bootstrap": "3.3.7",
+        "core-js": "^2.4.1",
+        "rxjs": "5.0.0-beta.12",
+        "zone.js": "^0.6.25"
+    },
+    "devDependencies": {
+        "@types/core-js": "^0.9.35",
+        "@types/node": "^6.0.45",
+        "angular2-template-loader": "^0.6.0",
+        "awesome-typescript-loader": "^2.2.4",
+        "css-loader": "^0.23.1",
+        "extract-text-webpack-plugin": "^1.0.1",
+        "file-loader": "^0.8.5",
+        "html-loader": "^0.4.3",
+        "html-webpack-plugin": "^2.15.0",
+        "null-loader": "^0.1.1",
+        "phantomjs-prebuilt": "^2.1.7",
+        "raw-loader": "^0.5.1",
+        "rimraf": "^2.5.2",
+        "style-loader": "^0.13.1",
+        "typescript": "^2.0.3",
+        "webpack": "^1.13.0",
+        "webpack-dev-server": "^1.14.1",
+        "webpack-merge": "^0.14.0",
+        "connect-route": "^0.1.5",
+        "body-parser": "^1.15.2",
+        "cookie-session": "^2.0.0-alpha.2"
+    },
+    "scripts": {
+        "start": "node dev-server",
+        "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
+    }
 }
