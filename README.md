@@ -15,10 +15,6 @@ Start GUI with mock server
 --------------------------
 Go to ```web-gui``` and just type:
 
-    gradle gulp_live
-
-Or direcly call Gulp task:
-
-    gulp live
+    npm start
   
 Then open browser at http://localhost:8888/
