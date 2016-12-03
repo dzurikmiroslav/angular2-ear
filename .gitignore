@@ -1,6 +1,7 @@
 build
 node_modules
-typings
 nb-configuration.xml
+nbproject
 .nb-gradle
 .gradle
+web-gui/dist
