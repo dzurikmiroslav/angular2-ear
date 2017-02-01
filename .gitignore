@@ -1,8 +1,7 @@
-build
-node_modules
+target
 nb-configuration.xml
 nbproject
-.nb-gradle
-.nb-gradle-properties
-.gradle
-web-gui/dist
+ng2demo-gui/dist
+ng2demo-gui/node
+ng2demo-gui/etc
+ng2demo-gui/node_modules
