@@ -3,17 +3,15 @@ Ear application with Agnular2.
 
 Building EAR
 ------------
-Node.js will be automaticly downloaded to internal gradle folder. Node dependencies (```node_modules``` folder) will be appeared in ```web-gui```.
+Node.js will be automaticly downloaded to internal gradle folder. Node dependencies (```node_modules``` folder) will be appeared in ```ng2demo-gui```.
 
-To build the EAR, enter to ```ear``` directory and type:
+To build the EAR, enter to ```ng2demo-ear``` directory and type:
 
-    gradle clean build
+    mvn clean install
     
-EAR will be probably located in ```ear/build/libs/```.
-
 Start GUI with mock server
 --------------------------
-Go to ```web-gui``` and just type:
+Go to ```ng2demo-gui``` and just type:
 
     npm start
   

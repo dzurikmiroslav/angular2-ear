@@ -1,0 +1,21 @@
+<md-sidenav-layout class="full-height">
+    <md-toolbar color="primary">
+        <md-icon>dashboard</md-icon>
+        Angular App
+
+        <nav *ngIf="isAuthorized">
+            <a md-button routerLink="/dashboard" routerLinkActive="active">Dashboard</a> 
+            <a md-button routerLink="/about" routerLinkActive="active">About</a> 
+        </nav>
+
+        <span class="app-toolbar-filler"></span>
+
+        <button md-icon-button md-tooltip="Log&nbsp;out" *ngIf="isAuthorized" (click)="logout()">
+            <md-icon>exit_to_app</md-icon>
+        </button>
+    </md-toolbar>
+
+    <div class="app-content">
+        <router-outlet></router-outlet>
+    </div>
+</md-sidenav-layout>

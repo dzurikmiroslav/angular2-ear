@@ -1,7 +1,0 @@
-apply plugin: 'ear'
-
-dependencies {
-    deploy project(':ejb-service')
-    deploy project(path: ':web-service', configuration: 'archives')
-    deploy project(path: ':web-gui', configuration: 'archives')
-}

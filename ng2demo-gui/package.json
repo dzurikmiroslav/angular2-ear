@@ -1,0 +1,49 @@
+{
+  "name": "ng2demo-gui",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@angular/common": "~2.4.4",
+    "@angular/compiler": "~2.4.4",
+    "@angular/core": "~2.4.4",
+    "@angular/forms": "~2.4.4",
+    "@angular/http": "~2.4.4",    
+    "@angular/platform-browser": "~2.4.4",
+    "@angular/platform-browser-dynamic": "~2.4.4",
+    "@angular/router": "~3.4.4",
+    "@angular/material": "^2.0.0-beta.1",
+    "bootstrap": "~3.3.7",
+    "core-js": "~2.4.1",
+    "rxjs": "~5.0.1",
+    "zone.js": "~0.7.4"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.35",
+    "@types/node": "^7.0.3",
+    "angular2-template-loader": "^0.6.0",
+    "awesome-typescript-loader": "^3.0.0-beta.17",
+    "body-parser": "^1.15.2",
+    "connect-route": "^0.1.5",
+    "cookie-session": "^2.0.0-alpha.2",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.15.0",
+    "null-loader": "^0.1.1",
+    "phantomjs-prebuilt": "^2.1.7",
+    "raw-loader": "^0.5.1",
+    "rest-client-generator": "https://github.com/dzurikmiroslav/rest-client-generator/tarball/master",
+    "rimraf": "^2.5.2",
+    "style-loader": "^0.13.1",
+    "typescript": "^2.0.3",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.14.0"
+  },
+  "scripts": {
+    "start": "node dev-server",   
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "generatie-rest-client": "rest-client-generator --output-file src/app/services/services.ts ../ng2demo-web/target/application.wadl"
+  }
+}
